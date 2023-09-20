@@ -1,0 +1,28 @@
+<mvc:View
+    controllerName="acc.int.ejerciciointegrador.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        navButtonPress="navBack"
+        showNavButton="true"
+    >
+        <HBox alignItems="Start">
+            <core:Fragment
+                type="XML"
+                fragmentName="acc.int.ejerciciointegrador.fragment.Detail1"
+            />
+            
+            <core:Fragment
+                type="XML"
+                fragmentName="acc.int.ejerciciointegrador.fragment.Detail2"
+            />
+        </HBox>
+    </Page>
+</mvc:View>
