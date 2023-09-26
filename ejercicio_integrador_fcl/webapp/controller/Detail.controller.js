@@ -25,14 +25,11 @@ sap.ui.define([
 		},
 
 		onExit: function () {
-			this.oRouter.getRoute(Constants.routes.routeList).detachPatternMatched(this._onOrderMatched, this);
-			this.oRouter.getRoute(Constants.routes.routeDetail).detachPatternMatched(this._onOrderMatched, this);
 			let oViewModel = new JSONModel({
 				layout: "OneColumn"
 			});
 
 			this.getOwnerComponent().setModel(oViewModel, Constants.views.appView);
-
 		}
 	});
 });
