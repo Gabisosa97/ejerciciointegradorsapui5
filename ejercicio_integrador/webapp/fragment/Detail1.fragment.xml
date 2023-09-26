@@ -10,7 +10,7 @@
     >
         <f:Form editable="false">
             <f:title>
-                <core:Title text="{i18n>Orders}" />
+                <core:Title text="{i18n>Details}" />
             </f:title>
             <f:layout>
                 <f:ResponsiveGridLayout

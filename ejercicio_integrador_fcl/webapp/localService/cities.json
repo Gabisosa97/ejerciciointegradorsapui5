@@ -1,0 +1,19 @@
+{
+    "cities": [
+        {
+            "name": "Berlin"
+        },
+        {
+            "name": "México D.F."
+        },
+        {
+            "name": "London"
+        },
+        {
+            "name": "Buenos Aires"
+        },
+        {
+            "name": "Santiago"
+        }
+    ]
+}

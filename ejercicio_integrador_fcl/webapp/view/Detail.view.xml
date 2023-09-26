@@ -1,0 +1,101 @@
+<mvc:View
+    controllerName="acc.fcl.ejerciciointegradorfcl.controller.Detail"
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:f="sap.f"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+>
+    <ObjectPageLayout
+        id="ObjectPageLayout"
+        showTitleInHeaderContent="true"
+        alwaysShowContentHeader="false"
+        preserveHeaderStateOnScroll="false"
+        headerContentPinnable="true"
+        isChildPage="true"
+        upperCaseAnchorBar="false"
+    >
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle>
+                <actions>
+                    <m:Button
+                        press=".onExit"
+                        text="{i18n>Close}"
+                        icon="sap-icon://sys-cancel"
+                    />
+                </actions>
+                <expandedHeading>
+                    <m:Title
+                        text="{i18n>OrderID}: {OrdersModel>OrderID}"
+                        wrapping="true"
+                        class="sapUiSmallMarginEnd"
+                    />
+                </expandedHeading>
+
+                <snappedHeading>
+                    <m:FlexBox
+                        wrap="Wrap"
+                        fitContainer="true"
+                        alignItems="Center"
+                    >
+                        <m:FlexBox
+                            wrap="NoWrap"
+                            fitContainer="true"
+                            alignItems="Center"
+                            class="sapUiTinyMarginEnd"
+                        >
+                            <m:Title
+                                text="{OrdersModel>ShipName}"
+                                wrapping="true"
+                            />
+                        </m:FlexBox>
+                    </m:FlexBox>
+                </snappedHeading>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+        <headerContent>
+            <m:FlexBox
+                wrap="Wrap"
+                fitContainer="true"
+                alignItems="Stretch"
+            >
+                <f:Avatar
+                    displaySize="L"
+                    displayShape="Square"
+                    class="sapUiTinyMarginEnd"
+                />
+                <m:VBox
+                    justifyContent="Center"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <m:Label text="{i18n>Address}" />
+                    <m:Text text="{OrdersModel>Address}" />
+                </m:VBox>
+                <m:VBox
+                    justifyContent="Center"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <m:Label text="{i18n>City}" />
+                    <m:Text text="{OrdersModel>City}" />
+                </m:VBox>
+                <m:VBox
+                    justifyContent="Center"
+                    class="sapUiSmallMarginEnd"
+                >
+                    <m:Label text="{i18n>CompanyName}" />
+                    <m:Text text="{OrdersModel>CompanyName}" />
+                </m:VBox>
+            </m:FlexBox>
+        </headerContent>
+        <sections>
+            <core:Fragment
+                type="XML"
+                fragmentName="acc.fcl.ejerciciointegradorfcl.fragment.GeneralInfo"
+            />
+            <core:Fragment
+                type="XML"
+                fragmentName="acc.fcl.ejerciciointegradorfcl.fragment.ShippingDetails"
+            />
+        </sections>
+    </ObjectPageLayout>
+</mvc:View>

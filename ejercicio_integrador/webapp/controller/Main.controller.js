@@ -23,6 +23,9 @@ sap.ui.define([
             },
 
             onInit: function () {
+                const oModel = new JSONModel({ country: "", city: "" });
+                this.getView().setModel(oModel, "filters");
+
                 sap.ui.getCore().getConfiguration().setLanguage("en-US");
                 const url = sap.ui.require.toUrl("acc/int/ejerciciointegrador") + "/northwind/northwind.svc/";
                 this._model = new sap.ui.model.odata.v2.ODataModel(url, {
@@ -65,8 +68,8 @@ sap.ui.define([
                 var aFilters = [];
                 var aFilters2 = [];
 
-                const countryBox = this.getView().byId("countryBox").getValue()
-                const cityBox = this.getView().byId("cityBox").getValue()
+                const countryBox = this.getView().getModel("filters").getProperty("/country")
+                const cityBox = this.getView().getModel("filters").getProperty("/city")
 
                 if (countryBox && countryBox.length > 0) {
                     var filter1 = new Filter("Country", FilterOperator.Contains, countryBox);
@@ -76,18 +79,18 @@ sap.ui.define([
                     var filter2 = new Filter("City", FilterOperator.Contains, cityBox);
                     aFilters.push(filter2);
                 }
-                aFilters2 = new Filter(aFilters, false);
+
+                if (countryBox || cityBox)
+                    aFilters2 = new Filter(aFilters, false);
 
                 var oList = this.byId("idTableOrders");
                 var oBinding = oList.getBinding("items");
                 oBinding.filter(aFilters2, "Application");
             },
             onClear: function () {
-                this.getView().byId("countryBox").setValue("")
-                this.getView().byId("cityBox").setValue("")
-                var oList = this.byId("idTableOrders");
-                var oBinding = oList.getBinding("items");
-                oBinding.filter([], "Clear");
+                const oModel = new JSONModel({ country: "", city: "" });
+                this.getView().setModel(oModel, "filters");
+                this.onSearch();
             },
             changeLang: function () {
                 switch (sap.ui.getCore().getConfiguration().getLanguage()) {

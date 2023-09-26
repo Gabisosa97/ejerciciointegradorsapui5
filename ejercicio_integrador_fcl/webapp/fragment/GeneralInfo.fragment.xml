@@ -1,0 +1,52 @@
+<core:FragmentDefinition
+    xmlns="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <ObjectPageSection title="{i18n>GeneralInfo}">
+        <subSections>
+            <ObjectPageSubSection>
+                <blocks>
+                    <form:SimpleForm
+                        maxContainerCols="2"
+                        editable="false"
+                        layout="ResponsiveGridLayout"
+                        labelSpanL="12"
+                        labelSpanM="12"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        columnsL="1"
+                        columnsM="1"
+                    >
+                        <form:content>
+                            <m:Label text="{i18n>Address}" />
+                            <m:Text text="{OrdersModel>Address}" />
+
+                            <m:Label text="{i18n>City}" />
+                            <m:Text text="{OrdersModel>City}" />
+
+                            <m:Label text="{i18n>CompanyName}" />
+                            <m:Text text="{OrdersModel>CompanyName}" />
+
+                            <m:Label text="{i18n>Freight}" />
+                            <m:Text text="{OrdersModel>Freight}" />
+
+                            <m:Label text="{i18n>OrderDate}" />
+                            <m:Text text="{OrdersModel>OrderDate}" />
+
+                            <m:Label text="{i18n>OrderID}" />
+                            <m:Text text="{OrdersModel>OrderID}" />
+
+                            <m:Label text="{i18n>Region}" />
+                            <m:Text text="{OrdersModel>Region}" />
+
+                            <m:Label text="{i18n>RequiredDate}" />
+                            <m:Text text="{OrdersModel>RequiredDate}" />
+                        </form:content>
+                    </form:SimpleForm>
+                </blocks>
+            </ObjectPageSubSection>
+        </subSections>
+    </ObjectPageSection>
+</core:FragmentDefinition>

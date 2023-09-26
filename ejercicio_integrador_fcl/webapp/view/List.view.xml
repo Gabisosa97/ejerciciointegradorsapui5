@@ -1,10 +1,8 @@
 <mvc:View
-    controllerName="acc.int.ejerciciointegrador.controller.Main"
-      xmlns:mvc="sap.ui.core.mvc"
+    controllerName="acc.fcl.ejerciciointegradorfcl.controller.List"
+    xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
-    xmlns:l="sap.ui.layout"
-    xmlns:f="sap.ui.layout.form"
     xmlns:core="sap.ui.core"
 >
     <Button
@@ -28,6 +26,7 @@
                 <ComboBox
                     id="countryBox"
                     placeholder="{i18n>Placeholder} {i18n>Country}"
+                    selectedKey="{filters>/country}"
                     items="{
 					path: 'countries>/countries',
 					sorter: { path: 'name' }
@@ -41,6 +40,7 @@
                 <ComboBox
                     id="cityBox"
                     placeholder="{i18n>Placeholder} {i18n>City}"
+                    selectedKey="{filters>/city}"
                     items="{
 					path: 'cities>/cities',
 					sorter: { path: 'name' }
@@ -70,7 +70,7 @@
         >
             <columns>
                 <Column>
-                    <Text text="{i18n>EmployeeID}" />
+                    <Text text="{i18n>OrderID}" />
                 </Column>
                 <Column>
                     <Text text="{i18n>CustomerID}" />
@@ -88,10 +88,10 @@
             <items>
                 <ColumnListItem
                     press="navTo"
-                    type="Active"
+                    type="Navigation"
                 >
                     <cells>
-                        <ObjectIdentifier text="{OrdersModel>EmployeeID}" />
+                        <ObjectIdentifier text="{OrdersModel>OrderID}" />
                         <ObjectIdentifier text="{OrdersModel>CustomerID}" />
                         <ObjectIdentifier text="{OrdersModel>CompanyName}" />
                         <ObjectIdentifier text="{OrdersModel>City}" />
@@ -102,3 +102,5 @@
                 </ColumnListItem>
             </items>
         </Table>
+    </Page>
+</mvc:View>
