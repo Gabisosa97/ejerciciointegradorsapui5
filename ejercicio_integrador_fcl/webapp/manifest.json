@@ -24,14 +24,6 @@
                     "localUri": "localService/metadata.xml",
                     "odataVersion": "2.0"
                 }
-            },
-            "cities_alias": {
-                "uri": "localService/cities.json",
-                "type": "JSON"
-            },
-            "countries_alias": {
-                "uri": "localService/countries.json",
-                "type": "JSON"
             }
         }
     },
@@ -85,11 +77,11 @@
             },
             "cities": {
                 "type": "sap.ui.model.json.JSONModel",
-                "dataSource": "cities_alias"
+                "uri": "localService/cities.json"
             },
             "countries": {
                 "type": "sap.ui.model.json.JSONModel",
-                "dataSource": "countries_alias"
+                "uri": "localService/countries.json"
             }
         },
         "resources": {

@@ -43,23 +43,9 @@ modules:
     build-result: resources
     requires:
     - artifacts:
-      - accintejerciciointegrador.zip
-      name: accintejerciciointegrador
-      target-path: resources/
-    - artifacts:
       - accfclejerciciointegradorfcl.zip
       name: accfclejerciciointegradorfcl
       target-path: resources/
-- name: accintejerciciointegrador
-  type: html5
-  path: ejercicio_integrador
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
 - name: accfclejerciciointegradorfcl
   type: html5
   path: ejercicio_integrador_fcl

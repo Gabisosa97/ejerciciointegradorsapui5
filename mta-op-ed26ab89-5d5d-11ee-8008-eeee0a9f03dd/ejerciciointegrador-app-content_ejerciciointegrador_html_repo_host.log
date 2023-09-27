@@ -1,0 +1,4 @@
+#2.0#2023 09 27 17:47:50.782#Z#DEBUG#com.sap.cloud.lm.sl.xs2.ed26ab89-5d5d-11ee-8008-eeee0a9f03dd.ejerciciointegrador-app-content_ejerciciointegrador_html_repo_host.startContentDeployTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-15838###
+[PollDeployContentStatusExecution] [ejerciciointegrador-app-content] [INFO] Application content was successfully uploaded from subaccount { CODE: '1002' }#
+
