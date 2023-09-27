@@ -45,7 +45,7 @@
                             class="sapUiTinyMarginEnd"
                         >
                             <m:Title
-                                text="{OrdersModel>ShipName}"
+                                text="{i18n>OrderID}: {OrdersModel>OrderID}"
                                 wrapping="true"
                             />
                         </m:FlexBox>
